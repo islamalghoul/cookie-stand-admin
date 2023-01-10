@@ -6,7 +6,7 @@ import axios from "axios";
 
 export  function AuthWrapper({children}){
     const [global,setGlobal]=useState({
-        tokens:null,
+        tokens:false,
         login,
     })
     async function login(userinfo){

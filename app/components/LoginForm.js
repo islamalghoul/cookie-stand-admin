@@ -2,19 +2,14 @@ import React, { useState,useContext } from "react";
 import {AuthContext} from './context/auth'
 
 export default function LoginForm() {
-    const [username,setUsername]=useState('')
-    const [password,setPassword]=useState('')
     const {login} = useContext(AuthContext);
 
     let handelSubmit=(e)=>{
         e.preventDefault()
-        
-        setUsername(e.target.username.value)
-        setPassword(e.target.password.value)
-        console.log(username,password)
+      
         login({
-          username,
-          password,
+          username:e.target.username.value,
+          password:e.target.password.value,
         })
 
 

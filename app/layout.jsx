@@ -1,5 +1,6 @@
 import './globals.css'
-
+import ThemeWrapper from './components/context/theme'
+import {AuthWrapper} from './components/context/auth'
 
 export default function RootLayout({ children }) {
   return (
@@ -9,8 +10,12 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
+      < ThemeWrapper>
+
+    <AuthWrapper>
       <body >{children}</body>
-     
+      </AuthWrapper>
+    </ThemeWrapper>
     </html>
   )
 }
